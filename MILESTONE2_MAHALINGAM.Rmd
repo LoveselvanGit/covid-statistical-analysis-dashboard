@@ -1,0 +1,406 @@
+---
+title: "DSC 520 PROJECT MILESTONE 2 - COVID 19 STATISTICAL ANALYSIS "
+author: "ANBUSELVAN MAHALINGAM"
+date: "November 05, 2023"
+output:
+  pdf_document: default
+---
+
+
+#Milestone 2 
+
+#How to import and clean my data
+step 1: I will be using the read.table fo reading and loading the data into a data frame.
+step 2: validate the data bt displaying the data and its structure
+step 3: Create proper column names and convert the data into numerical for supporting machine learning model.
+step 4: Objective of this abstract is to come up with a statistical analysis predicting the race/ethnicity with their gender category who got registered with more number of covid deaths so that this category people can be given with extra care and studies to handle any future covid like situations with minimal deaths.
+
+
+#What does the final data set look like?
+Final Data set available in the same document last pages. I will look for further expansion to add more significant variables supporting the prediction.
+
+#Questions for future steps.
+we will be using the projected Male/Female percentage data for 2027 and assuming each race and ethnicity follow the same population for each sub groups.
+Projection estimates calculated using the mid-term population ration of 49.5 percent male and 50.47 percent female.
+
+#What information is not self-evident?
+Here Gender population with-in each race and ethnicity sub group is not self contained.
+
+#What are different ways you could look at this data?
+The data set is small and it can be looked in different way by visualization the relation between race/ethnicity and COVID deaths, COVID cases registered..
+
+
+#How do you plan to slice and dice the data?
+Gender analysis can be further performed on this data and see, Comparison between male vs. female percentages regarding cases and deaths across races.
+comparative metrics can be further developed as death rate per 100,000 for each race/ethnicity.
+
+#How could you summarize your data to answer key questions?
+Creating a Random Forest model for the given data , by setting the threshold and categorize each race and ethnicity had highest covid death and categorize them by Loa and high Category based on death count and number of affected COVID cases.
+
+#What types of plots and tables will help you to illustrate the findings to your questions?
+Below visualization can be used to for exploring more information from the data set.
+COVID death and cases comparison by stacked bar Chart for Percentages.
+COVID death and cases comparison by stacked bar Chart for counts.
+Bar chart for COVID deaths count and Cases count.
+
+
+#Do you plan on incorporating any machine learning techniques to answer your research questions? Explain.
+Yes, by using random forest model, we will be getting high/Low score on COVID deaths for the specific ethnicity/race along with the gender contribution.
+we will be using the "MeanDecreaseAccuracy" and "MeanDecreaseGini" metrics to measure how much each variable contributes to the prediction accuracy and purity of the model.
+
+
+#Questions for future steps.
+For the better high/Low score on COVID deaths for the specific ethnicity/race. do we need to use only populations count instead of percentage?
+I will be exploring more options and performing further data set preparation and evaluate the random forest model again.
+
+
+# Abstract
+
+  Today, everyone in the world should feel happy and enjoy their life and every current movement because we have passed through the critical covid-19 pandemic and the deadly illness. Corona virus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus. Anyone can get sick with COVID-19 and become seriously ill or die at any age.
+  The objective of this abstract is to perform statistical analysis on available covid 19 data and produce insight on what are the categorical people group who got affected more and what are the categorical people who dies due to this deadly virus infection. 
+  Reference WHO, World Health organization, COIV-19 reference, URL:https://www.who.int/health-topics/coronavirus#tab=tab_1
+
+# Introduction
+
+  we know COIVD-19 is not the first or the final disease we have seen, it is possible in the future we may get similar virus spread, we need have better prevention plan ad control any similar kind of virus spread in the future.The Objective of this research paper is to come up with statistical analysis and the current insight from covid-19 data, based on the research results we  can form a prevention plan .
+
+
+# Research questions
+
+1.    What are the most, impacted gender by the COVID 19 and registered high Number of death. 
+2.    What are the most, impacted race by the COVID 19 and registered high Number of death.
+3.    What are the most, impacted gender by the COVID 19 and registered high Number of infected cases. 
+4.    What are the most, impacted race by the COVID 19 and registered high Number of infected cases.
+5.    what are the correlated variables, and the population distribution by each state to the COVID 19 death. 
+6.    what if the COVID like fever hits again, what are the group or category of people we need to provide extra care to reduce the impact. any predictive model needed to find the most impact full group or category of people who needs special attention and care. 
+
+# Approach
+1.    We will be getting the COVID 19 related data from trusted parties.Government, medical departments and Non-profit organizations provides data about COVID 19 death.
+2.    Perform exploratory data analysis & visualizations to get a clean data,identify significant variables and perform data wrangling process for getting clean data.
+3.    Perform single and multiple linear regression model analysis and identify a model with most significant variables relating to COVID 19 death count.
+4.    Evaluate the model performance and produce visualization supporting the created models.
+5.    If time permits use the prediction model and come up with the possible population by each category Age, race, Sex for each State and use it against model and project the future potential death in case if it happens again.
+    
+# How your approach addresses (fully or partially) the problem.
+  My approach will partially by identifying the significant variables such as sex, age, race related to COVID 19 death. for the prevention we need to predict the needed medical facility,and need to come up with the solution plan .the model we create in this abstract will only give insight about COVID death and solution need to be planed for prevention. 
+
+# Data  (Minimum of 3 Datasets - but no requirement on number of fields or rows)
+
+CDC Centers for Disease Control and Prevention - Provisional COVID-19 Deaths by Sex and Age
+Link: https://data.cdc.gov/NCHS/Provisional-COVID-19-Deaths-by-Sex-and-Age/9bhg-hcku
+
+KFF, Population Distribution by Age - 
+Link: https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+
+KFF, Population Distribution by Sex
+https://www.kff.org/other/state-indicator/distribution-by-sex/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+
+# Required Packages
+ggplot2, dplyr, Metrics, reshape.
+Based on implementation need we will consider adding further packages to support data wrangling and visualization.
+
+# Plots and Table Needs
+
+1.    Data Distribution Plots - To visualize the distribution of numeric variables using histograms, density plots, or box plots. 
+2.    Categorical Variable Counts - To create bar plots or pie charts to display the distribution of categorical variables. 
+3.    Correlation Matrix and Heatmap - To Correlation Matrix and Heatmap
+4.    Scatterplots - Create scatterplots to explore relationships between pairs of numeric variables. 
+5.    Outlier Detection Plots - Use box plots, scatterplots, or other visualization techniques to identify outliers in your data.
+
+# Questions for future steps
+
+1.    Even today, people are getting infected by COVID and few state has COID death registered, do we need to consider real-time data? or go with the latest data from CDC?
+2.    do we need to consider adding any other significant variable for this prediction model, as of now we now we are scoping the ,prediction model with variables age, race. and sex distribution across the state.
+3.    It is possible some of COVID cases and COVID related death were never reported, or by mistake other virus and general sick and illness death for senior citizens might have included as COVID death, any further analysis needs to be performed on this to get better dataset or trust CDC data and proceed with that?
+
+
+```{r}
+#To read data from CDC Centers for Disease Control and Prevention - Provisional COVID-19 Deaths by Sex and Age
+#Link: https://data.cdc.gov/NCHS/Provisional-COVID-19-Deaths-by-Sex-and-Age/9bhg-hcku
+
+# COID 19 deaths_by_race_ethnicity__all_age_groups
+
+# Load necessary libraries
+library(dplyr)
+
+# Load the covid death data set by race/ethnicity
+covid_deaths_race_ethnicity <- read.table("deaths_by_race_ethnicity__all_age_groups.csv", sep = ",", quote = "\"", fill = TRUE)
+
+# Load the covid infected case data set by race/ethnicity
+covid_cases_race_ethnicity <- read.table("cases_by_race_ethnicity__all_age_groups.csv", sep = ",", quote = "\"", fill = TRUE)
+
+```
+
+```{r}
+# original data frame & dataset - EDA 
+covid_deaths_race_ethnicity
+
+```
+
+```{r}
+# original data frame & dataset - EDA 
+covid_cases_race_ethnicity
+```
+
+
+```{r}
+# Remove the first 3 rows
+covid_deaths_race_ethnicity <- covid_deaths_race_ethnicity[-(1:3),]
+covid_cases_race_ethnicity <- covid_cases_race_ethnicity[-(1:3),]
+
+# Reset the row names to maintain consistency
+rownames(covid_deaths_race_ethnicity) <- NULL
+rownames(covid_cases_race_ethnicity) <- NULL
+
+
+# Set new column names here the first row was the colunm name
+colnames(covid_deaths_race_ethnicity) <- c("Race/Ethnicity", "Percent of deaths", "	Count of deaths", "Percent of US population")
+colnames(covid_cases_race_ethnicity) <- c("Race/Ethnicity", "Percent of cases", "	Count of cases", "Percent of US population")
+
+```
+
+```{r}
+#Cleaned dataframe - COVID deaths by race & ethnicity
+covid_deaths_race_ethnicity
+```
+
+```{r}
+#cleaned dataframe - COVID infected cases by race & ethnicity
+covid_cases_race_ethnicity
+```
+
+```{r}
+# To merge the both the dataframe into combined one dataframe
+
+# Full outer join to merge both the dataframe based on thei Race and ethnicity
+merged_Race_Ethnicity_df <- merge(covid_deaths_race_ethnicity, covid_cases_race_ethnicity, by = "Race/Ethnicity", all = TRUE)
+
+# drop the duplicate column Percent of US population.x from the merged df 
+merged_Race_Ethnicity_df$'Percent of US population.x' <- NULL  # Drop the column by assigning NULL
+
+# Rename 'Percent of US population.y' to 'Percent of US population'
+names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Percent of US population.y"] <- "Percent of US population"
+
+# To print the merged data frames
+print(merged_Race_Ethnicity_df)
+
+
+```
+
+To add gender distribution to the race and ethnicity distribution
+From www.statista.com, 2027 projection for USA male/female distribution 
+2027: Projection estimates calculated using the mid-term population ration of 49.5 percent male and 50.47 percent female
+Refer: https://www.statista.com/statistics/737923/us-population-by-gender/#:~:text=Projection%20estimates%20calculated%20using%20the,US%20Census%20data%20for%202021.
+
+
+```{r}
+
+  
+# we will use the same gender distribution projection and also the assumption o the gender distribution applicable to all the Race and ethnicity.
+
+# Add male column 49.50% and female 50.47% to all race and ethnicity
+
+# Assuming you have vectors with actual percentages for each
+male_percentages <- c(49.50, 49.50, 49.50, 49.50, 49.50, 49.50, 49.50) # vector data for male percentages
+female_percentages <- c(50.47, 50.47, 50.47, 50.47, 50.47, 50.47, 50.47) # vector data for female percentages
+
+# Add the male and female percentage data to the dataframe
+merged_Race_Ethnicity_df$MalePercentage <- male_percentages
+merged_Race_Ethnicity_df$FemalePercentage <- female_percentages
+
+# View the dataframe
+print(merged_Race_Ethnicity_df)
+
+```
+
+```{r}
+# Clean up column names by removing leading/trailing whitespace and replacing spaces with underscores
+names(merged_Race_Ethnicity_df) <- gsub("^\\s+|\\s+$", "", names(merged_Race_Ethnicity_df)) # remove leading/trailing spaces
+names(merged_Race_Ethnicity_df) <- gsub("\\s+", "_", names(merged_Race_Ethnicity_df)) # replace spaces with underscores
+str(merged_Race_Ethnicity_df)
+# Convert the 'Count_of_deaths' and 'Count_of_cases' to numeric after ensuring they're clean
+merged_Race_Ethnicity_df$Count_of_deaths <- as.numeric(as.character(merged_Race_Ethnicity_df$Count_of_deaths))
+merged_Race_Ethnicity_df$Count_of_cases <- as.numeric(as.character(merged_Race_Ethnicity_df$Count_of_cases))
+
+# Since we have not seen the 'Female_Percentage' column before in your description, 
+# ensure that it is in the data frame and also numeric, the same way you convert other numeric columns.
+
+# Handle possible NA values after conversion
+merged_Race_Ethnicity_df <- na.omit(merged_Race_Ethnicity_df) # Or some other appropriate NA handling that suits your analysis needs.
+
+
+```
+
+FINAL DATASET
+
+```{r}
+
+
+# Rename 'Race/Ethnicity' to 'Race_Ethnicity'
+names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Race/Ethnicity"] <- "Race_Ethnicity"
+
+# Rename 'MalePercentage' to 'Male_Percentage'
+names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "MalePercentage"] <- "Male_Percentage"
+
+# Rename 'FemalePercentage' to 'Female_Percentage'
+names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "FemalePercentage"] <- "Female_Percentage"
+
+
+#names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Percent of deaths"] <- "Percent_of_deaths"
+#names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Count of deaths"] <- "Count_of_deaths"
+#names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Percent of cases"] <- "Percent_of_cases"
+#names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Count of cases"] <- "Count_of_cases"
+#names(merged_Race_Ethnicity_df)[names(merged_Race_Ethnicity_df) == "Percent of US population"] <- "Percent_of_US_population"
+
+
+
+#print(merged_Race_Ethnicity_df)
+merged_Race_Ethnicity_df$Percent_of_deaths <- as.numeric(as.character(merged_Race_Ethnicity_df$Percent_of_deaths))
+merged_Race_Ethnicity_df$Percent_of_cases <- as.numeric(as.character(merged_Race_Ethnicity_df$Percent_of_cases))
+merged_Race_Ethnicity_df$Percent_of_US_population <- as.numeric(as.character(merged_Race_Ethnicity_df$Percent_of_US_population))
+# Convert factors to numeric if they are encoded as characters
+merged_Race_Ethnicity_df$Count_of_deaths <- as.numeric(merged_Race_Ethnicity_df$Count_of_deaths)
+merged_Race_Ethnicity_df$Count_of_cases <- as.numeric(merged_Race_Ethnicity_df$Count_of_cases)
+
+```
+
+
+```{r}
+str(merged_Race_Ethnicity_df)
+```
+
+```{r}
+
+# Current USA population 339996563
+# Step 1 - calculate the total population by each race/ethnicity
+# step 2 - calculate the male and female gender population by their percentage 
+#from each race/ethnicity category.
+
+total_us_population <- 339996563
+
+#Step 1
+#Calculate the total population for each race and ethnicity based on their percentage
+merged_Race_Ethnicity_df$Total_Population_Count <- 
+  total_us_population * merged_Race_Ethnicity_df$Percent_of_US_population / 100
+
+
+# Now calculate the male and female populations again with the new estimated totals
+merged_Race_Ethnicity_df$Male_Population_Count <- 
+  merged_Race_Ethnicity_df$Total_Population_Count * merged_Race_Ethnicity_df$Male_Percentage / 100
+merged_Race_Ethnicity_df$Female_Population_Count <- 
+  merged_Race_Ethnicity_df$Total_Population_Count * merged_Race_Ethnicity_df$Female_Percentage / 100
+
+merged_Race_Ethnicity_df
+```
+
+```{r}
+# Random Forest model for handling both categorical and numerical values
+# By using random forest model we will be getting high/Low score for the specific ethnicity/race along with the gender contribution.
+
+# Convert the 'Race_Ethnicity' into a factor
+merged_Race_Ethnicity_df$Race_Ethnicity <- as.factor(merged_Race_Ethnicity_df$Race_Ethnicity)
+
+if (!require("foreign")) {
+  install.packages("randomForest")
+}
+library(randomForest)
+
+
+# interested in high vs. low death counts based on a threshold
+median_deaths <- median(merged_Race_Ethnicity_df$Count_of_deaths)
+merged_Race_Ethnicity_df$High_Death_Count <- as.factor(ifelse(merged_Race_Ethnicity_df$Count_of_deaths > median_deaths, 'High', 'Low'))
+
+# Fit Random Forest model
+rf_model <- randomForest(High_Death_Count ~ Race_Ethnicity + Count_of_deaths +
+                           Count_of_cases + Total_Population_Count + Male_Population_Count + 
+                           Female_Population_Count, data = merged_Race_Ethnicity_df, 
+                         ntree = 500, importance = TRUE)
+
+# View model importance
+importance(rf_model)
+
+```
+```{r}
+#FINAL DATA
+
+# From the Results: Male_Population_Count: is the most important feature based 
+#on the MeanDecreaseAccuracy metric and has the highest MeanDecreaseGini score, 
+#indicating it plays a significant role in the model's predictions.
+merged_Race_Ethnicity_df
+```
+
+```{r}
+library("ggplot2")
+# Stacked Bar Chart for Percentages comparison
+ggplot(merged_Race_Ethnicity_df, aes(fill=Race_Ethnicity, y=Percent_of_deaths, x=Race_Ethnicity)) + 
+  geom_bar(position="stack", stat="identity") + 
+  geom_bar(aes(y=-Percent_of_cases), position="stack", stat="identity") +
+  scale_y_continuous(labels=abs, breaks=abs(seq(min(merged_Race_Ethnicity_df$Percent_of_cases), max(merged_Race_Ethnicity_df$Percent_of_deaths), by=25))) + 
+  labs(title="Comparison of COVID-19 Impact by Race/Ethnicity",
+       subtitle="Stacked bars showing percent of deaths and cases",
+       y="Percentage (%)",
+       x="Race/Ethnicity") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+  #theme_minimal()
+```
+
+```{r}
+# Stacked Bar Chart for count comparison
+ggplot(merged_Race_Ethnicity_df, aes(fill=Race_Ethnicity, y=Count_of_deaths, x=Race_Ethnicity)) + 
+  geom_bar(position="stack", stat="identity") + 
+  geom_bar(aes(y=-Count_of_cases), position="stack", stat="identity") +
+  scale_y_continuous(labels=abs, breaks=abs(seq(min(merged_Race_Ethnicity_df$Count_of_cases), max(merged_Race_Ethnicity_df$Count_of_deaths), by=100000000))) + 
+  labs(title="Comparison of COVID-19 Impact by Race/Ethnicity",
+       subtitle="Stacked bars showing count of deaths and cases",
+       y="Count",
+       x="Race/Ethnicity") + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+  #theme_minimal()
+```
+
+
+```{r}
+# Bar Chart for COVID deaths Count Per race/ethnicity
+ggplot(merged_Race_Ethnicity_df) + 
+  geom_bar(aes(x=Race_Ethnicity, y=Count_of_deaths, fill="Deaths"), position="dodge", stat="identity") +
+  labs(title="COVID-19 Death Counts by Race/Ethnicity",
+       y="Count",
+       x="Race/Ethnicity",
+       fill="Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+  #theme_minimal()
+```
+
+```{r}
+#  Bar Chart for COVID cases Counts Per race/ethnicity
+ggplot(merged_Race_Ethnicity_df) + 
+  #geom_bar(aes(x=Race_Ethnicity, y=Count_of_deaths, fill="Deaths"), position="dodge", stat="identity") +
+  geom_bar(aes(x=Race_Ethnicity, y=Count_of_cases, fill="Cases"), position="dodge", stat="identity") + 
+  labs(title="COVID-19 Case Counts by Race/Ethnicity",
+       y="Count",
+       x="Race/Ethnicity",
+       fill="Type") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+  #theme_minimal()
+```
+
+
+
+
+
+
+# References 
+KFF data reference for population distribution by sex, age, race and ethnicity 
+Population Distribution by Age: https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+Population Distribution by Sex: https://www.kff.org/other/state-indicator/distribution-by-sex/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+
+CDC Cumulative COVID cases and death data, WHO reference, Link: https://data.cdc.gov/NCHS/Provisional-COVID-19-Deaths-by-Sex-and-Age/9bhg-hcku 
+Covid 19 cases and death count,  www.worldometers. 
+
+
+
+
+
+
+
+
