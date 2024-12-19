@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project focuses on performing statistical analysis on COVID-19 data to identify patterns related to race, ethnicity, and gender. The goal is to provide insights on the impact of COVID-19 through **exploratory data analysis (EDA)**, **machine learning models**, and **interactive dashboards** created with **Tableau**. These insights can help develop targeted strategies for handling future pandemics.
+This project focuses on performing statistical analysis on COVID-19 data to identify patterns related to race, ethnicity, and gender. The goal is to provide insights on the impact of COVID-19 through **exploratory data analysis (EDA)**, **machine learning models** These insights can help develop targeted strategies for handling future pandemics.
 
 ---
 
@@ -13,14 +13,10 @@ This project focuses on performing statistical analysis on COVID-19 data to iden
    - Identify groups most affected by the pandemic.
 
 2. **Visualization**:
-   - Create meaningful visualizations using R and Tableau.
    - Compare COVID-19 deaths and cases across different demographics.
 
 3. **Machine Learning**:
    - Implement a **Random Forest** model to predict high/low COVID-19 death rates based on demographic data.
-
-4. **Dashboard**:
-   - Develop an interactive **Tableau dashboard** to present findings visually.
 
 ---
 ## Data Sources
@@ -61,12 +57,6 @@ This project focuses on performing statistical analysis on COVID-19 data to iden
 - **Model Evaluation**:
   - **Feature Importance** measured using `MeanDecreaseAccuracy` and `MeanDecreaseGini`.
 
-### 4. **Tableau Dashboard**
-
-- **Interactive Visualizations**:
-  - Trends in COVID-19 deaths and cases.
-  - Demographic breakdown by race, ethnicity, and gender.
-- **File**: `Final-Number of Crashes Over Time.twb`
 
 ---
 
