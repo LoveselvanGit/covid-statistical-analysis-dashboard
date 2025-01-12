@@ -64,7 +64,7 @@ This project focuses on performing statistical analysis on COVID-19 data to iden
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/covid-statistical-analysis-dashboard.git
+   git clone https://github.com/LoveselvanGit/covid-statistical-analysis-dashboard.git
 
    install.packages(c("ggplot2", "dplyr", "randomForest", "reshape", "Metrics"))
 
